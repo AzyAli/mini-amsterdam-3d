@@ -21,7 +21,7 @@ We used the following technologies to build this project:
    ```bash
    git clone https://github.com/AzyAli/mini-amsterdam-3d.git
    cd mini-amsterdam-3d/APP/website/google-3d
-````
+   ```
 
 Note that this example demonstrates using deck.gl with Google Maps. For other base map options, visit the project templates in [get-started](/examples/get-started).
 
