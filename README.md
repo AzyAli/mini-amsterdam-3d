@@ -1,83 +1,54 @@
-# Mini Amsterdam 3D
+# Mini Amsterdam 3D Digital Twin
 
-Mini Amsterdam 3D is a 3D visualization project that displays real-time data for trains, buses, and flights in Amsterdam. This project uses Mapbox GL JS for rendering the map and Three.js for rendering 3D objects.
+## Introduction
+Welcome to the Mini Amsterdam 3D Digital Twin project! This project is inspired by [Mini Tokyo 3D](https://minitokyo3d.com/) and aims to visualize real-time fleet management in a 3D digital twin of Amsterdam.
+
+## Technical Setup
+We used the following technologies to build this project:
+- **Google Maps API**: For map rendering
+- **Deck.gl**: For 3D visualization
+- **ScenegraphLayer**: For rendering 3D models
+- **PathLayer**: For route visualization
+- **Google Maps Directions API**: For fetching transit routes
 
 ## Features
+- **Real-time Animation**: Vehicles follow predefined and transit routes, with dynamic camera tracking.
+- **Layer Control**: Toggle visibility of paths, transit, and traffic layers.
+- **Model Customization**: Different 3D models for trucks, trams, buses, and metro, with manual size control.
 
-- Real-time train, bus, and flight data visualization
-- Interactive 3D map of Amsterdam
-- Weather data integration from KNMI
-- Search functionality for stations and bus stops
-- Customizable map controls
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js
-- npm (Node Package Manager)
-- Mapbox access token
-- KNMI API key
-
-### Installation
-
+## Setup Instructions
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/your-username/mini-amsterdam-3d.git
-   cd mini-amsterdam-3d
-   ```
+   git clone https://github.com/AzyAli/mini-amsterdam-3d.git
+   cd mini-amsterdam-3d/APP/website/google-3d
+````
 
-2. Install the dependencies:
+Note that this example demonstrates using deck.gl with Google Maps. For other base map options, visit the project templates in [get-started](/examples/get-started).
 
-   ```bash
-   npm install
-   ```
 
-3. Create a `.env` file in the root directory and add your Mapbox access token and KNMI API key:
+### Usage
 
-   ```env
-   MAPBOX_ACCESS_TOKEN=your-mapbox-access-token
-   KNMI_API_KEY=your-knmi-api-key
-   ```
+To run this example, you need a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key) and a [Google Maps Map ID](https://developers.google.com/maps/documentation/javascript/webgl) for a map that is configured to use the Vector rendering mode. You can either set an environment variables:
 
-4. Start the development server:
+```bash
+export GoogleMapsAPIKey=<google_maps_api_key>
+export GoogleMapsMapId=<google_maps_map_id>
+```
 
-   ```bash
-   npm start
-   ```
+Or set the `GOOGLE_MAPS_API_KEY` and `GOOGLE_MAPS_MAP_ID` variables in `app.js`.
 
-5. Open your browser and navigate to `http://localhost:3000`.
+```bash
+# install dependencies
+npm install
+# or
+yarn
+# bundle and serve the app with vite
+npm start
+```
 
-## Usage
+### Data Source
 
-### Map Controls
+3D model is based on "Low Poly Truck" (https://sketchfab.com/3d-models/low-poly-truck-98826ebd44e2492298ac925461509216) by Arifido._ (https://sketchfab.com/Arifido._) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/).
 
-- **Zoom In/Out**: Use the zoom controls on the map or scroll with your mouse.
-- **Fullscreen**: Toggle fullscreen mode using the fullscreen control.
-- **Search**: Use the search control to find stations and bus stops.
-- **Underground Mode**: Toggle underground mode to view underground train lines.
-- **Real-time Mode**: Toggle real-time mode to switch between real-time and static data.
-- **Weather**: Toggle weather data visualization.
 
-### Data Sources
-
-- **Train Data**: Real-time train data is fetched from the 9292 API.
-- **Bus Data**: Real-time bus data is fetched from the 9292 API.
-- **Flight Data**: Real-time flight data is fetched from the KNMI API.
-- **Weather Data**: Weather data is fetched from the KNMI API.
-
-## Contributing
-
-Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) for more information.
-
-## License
-
-This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- [Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js)
-- [Three.js](https://threejs.org)
-- [KNMI](https://www.knmi.nl)
-- [9292 API](https://9292.nl)
+To build your own application with deck.gl and Google Maps, check out the [documentation of @deck.gl/google-maps module](../../../docs/api-reference/google-maps/overview.md)
