@@ -1,0 +1,11 @@
+Model Information:
+* title:	ns train
+* source:	https://sketchfab.com/3d-models/ns-train-059c7392e5f1490f9ca356e9a10a50a4
+* author:	UiGoku (https://sketchfab.com/GokuSSJB)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "ns train" (https://sketchfab.com/3d-models/ns-train-059c7392e5f1490f9ca356e9a10a50a4) by UiGoku (https://sketchfab.com/GokuSSJB) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

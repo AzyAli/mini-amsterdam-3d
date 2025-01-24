@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mini Amsterdam 3d </title>
+    <style>
+      /* fill the window */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #app {
+        height: 100%;
+      }
+      .panel-container {
+        position: absolute;
+        top: 80px;
+        left: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 8px;
+        border-radius: 4px;
+      }
+      .panel-title {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      .input-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+      .input-container label {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="panel-container">
+      <div class="panel-title">Mini Amsterdam 3d</div>
+      <div class="panel-content">
+        <div class="input-container">
+          <label>Show paths</label>
+          <input type="checkbox" id="show-paths">
+        </div>
+        <div class="input-container">
+          <label>Show transit</label>
+          <input type="checkbox" id="show-transit">
+        </div>
+        <div class="input-container">
+          <label>Show traffic</label>
+          <input type="checkbox" id="show-traffic">
+        </div>
+        <div class="input-container">
+          <label>Camera tracking</label>
+          <input type="checkbox" id="camera-tracking" checked>
+        </div>
+        <p>
+          By <a href="https://github.com/AzyAli" target="_blank">AzyAli</a> inspired by:<a href="https://minitokyo3d.com/" target="_blank">minitokyo3d.com</a>
+        </p>
+      </div>
+    </div>
+    <script type="module">
+      import {renderToDOM} from './app.js';
+      const app = document.getElementById('app');
+      const controls = await renderToDOM(app);
+
+      document.getElementById('show-paths').addEventListener('change', (event) => {
+        controls.update({ showPaths: event.target.checked });
+      });
+
+      document.getElementById('show-transit').addEventListener('change', (event) => {
+        controls.update({ showTransit: event.target.checked });
+      });
+
+      document.getElementById('show-traffic').addEventListener('change', (event) => {
+        controls.update({ showTraffic: event.target.checked });
+      });
+
+      document.getElementById('camera-tracking').addEventListener('change', (event) => {
+        controls.update({ tracking: event.target.checked });
+      });
+    </script>
+  </body>
+</html>

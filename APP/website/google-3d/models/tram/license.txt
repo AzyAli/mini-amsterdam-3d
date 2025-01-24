@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gvb metro 51
+* source:	https://sketchfab.com/3d-models/gvb-metro-51-ce7cb95a5ad7443fba7595fc3bfbc977
+* author:	UiGoku (https://sketchfab.com/GokuSSJB)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gvb metro 51" (https://sketchfab.com/3d-models/gvb-metro-51-ce7cb95a5ad7443fba7595fc3bfbc977) by UiGoku (https://sketchfab.com/GokuSSJB) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
