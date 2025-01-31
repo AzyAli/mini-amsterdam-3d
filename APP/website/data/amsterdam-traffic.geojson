@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "name": "amsterdam traffic",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "traffic",
+        "timestamp": "2025-01-28T08:38:51.948698"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            4.728620409607732,
+            52.278344971822
+          ]
+        ]
+      }
+    }
+  ]
+}

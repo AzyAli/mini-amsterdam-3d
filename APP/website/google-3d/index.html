@@ -34,6 +34,17 @@
       .input-container label {
         margin-right: 5px;
       }
+      #deck-tooltip {
+        position: absolute;
+        display: none; /* hide by default */
+        pointer-events: none; /* let clicks pass through */
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 6px;
+        border-radius: 4px;
+        font-size: 12px;
+        z-index: 999; /* ensure it's on top of the map */
+      }
     </style>
   </head>
   <body>
@@ -62,6 +73,7 @@
         </p>
       </div>
     </div>
+    <div id="deck-tooltip"></div>
     <script type="module">
       import {renderToDOM} from './app.js';
       const app = document.getElementById('app');
