@@ -24,7 +24,7 @@ Welcome to the Mini Amsterdam 3D Digital Twin project! This is my individual cou
 
 ## Preview
 
-![Screenshot of the 3D Map with Vehicles](docs/screenshot.png)
+![Screenshot of the 3D Map with Vehicles](APP/docs/screenshot.gif)
 
 _(Example screenshot of the deck.gl overlay with real-time transit vehicles.)_
 
