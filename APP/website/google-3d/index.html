@@ -45,6 +45,36 @@
         font-size: 12px;
         z-index: 999; /* ensure it's on top of the map */
       }
+      #style-selector-container {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: white;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      #style-selector {
+        padding: 5px;
+        margin-left: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      #toggle-3d {
+        margin-right: 10px;
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: white;
+        cursor: pointer;
+      }
+
+      #toggle-3d:hover {
+        background: #f0f0f0;
+      }
     </style>
   </head>
   <body>
@@ -74,6 +104,17 @@
       </div>
     </div>
     <div id="deck-tooltip"></div>
+    <div id="style-selector-container">
+      <button id="toggle-3d">Toggle 3D View</button>
+      <label for="style-selector">Map Style:</label>
+      <select id="style-selector">
+        <option value="default">Default</option>
+        <option value="silver">Silver</option>
+        <option value="night">Night</option>
+        <option value="retro">Retro</option>
+        <option value="hiding">Hiding</option>
+      </select>
+    </div>
     <script type="module">
       import {renderToDOM} from './app.js';
       const app = document.getElementById('app');

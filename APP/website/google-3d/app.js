@@ -45,8 +45,8 @@ const LINE_INFO = {
   27: {type: 'TRAM', direction: 'Dijkgraafplein - Surinameplein'},
 };
 
-const GOOGLE_MAPS_API_KEY = '';
-const GOOGLE_MAP_ID = '';
+const GOOGLE_MAPS_API_KEY = 'AIzaSyB3SJS6x2XGb7RuX6C3feKH_zuT34yTfi4';
+const GOOGLE_MAP_ID = 'c08b06cb02f088ee';
 const AMSTERDAM_CENTER = {lng: 4.9041, lat: 52.3676};
 
 // const DATA_URL = './data/amsterdam-trips old.json';
@@ -60,6 +60,300 @@ const VEHICLE_COLORS = {
   // METRO: [0, 0, 255],  // Blue
   // FERRY: [255, 165, 0], // Orange
   // DEFAULT: [150, 150, 150]
+};
+
+// Add after existing constants
+const MAP_STYLES = {
+  default: [],
+  silver: [
+    {
+      elementType: "geometry",
+      stylers: [{ color: "#f5f5f5" }]
+    },
+    {
+      elementType: "labels.icon",
+      stylers: [{ visibility: "off" }]
+    },
+    {
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#616161" }]
+    },
+    {
+      elementType: "labels.text.stroke",
+      stylers: [{ color: "#f5f5f5" }]
+    },
+    {
+      featureType: "administrative.land_parcel",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#bdbdbd" }]
+    },
+    {
+      featureType: "poi",
+      elementType: "geometry",
+      stylers: [{ color: "#eeeeee" }]
+    },
+    {
+      featureType: "poi",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#757575" }]
+    },
+    {
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [{ color: "#e5e5e5" }]
+    },
+    {
+      featureType: "poi.park",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#9e9e9e" }]
+    },
+    {
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [{ color: "#ffffff" }]
+    },
+    {
+      featureType: "road.arterial",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#757575" }]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [{ color: "#dadada" }]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#616161" }]
+    },
+    {
+      featureType: "road.local",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#9e9e9e" }]
+    },
+    {
+      featureType: "transit.line",
+      elementType: "geometry",
+      stylers: [{ color: "#e5e5e5" }]
+    },
+    {
+      featureType: "transit.station",
+      elementType: "geometry",
+      stylers: [{ color: "#eeeeee" }]
+    },
+    {
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [{ color: "#c9c9c9" }]
+    },
+    {
+      featureType: "water",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#9e9e9e" }]
+    }
+  ],
+  night: [
+    { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+    { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+    { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+    {
+      featureType: "administrative.locality",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }]
+    },
+    {
+      featureType: "poi",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }]
+    },
+    {
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [{ color: "#263c3f" }]
+    },
+    {
+      featureType: "poi.park",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#6b9a76" }]
+    },
+    {
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [{ color: "#38414e" }]
+    },
+    {
+      featureType: "road",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#212a37" }]
+    },
+    {
+      featureType: "road",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#9ca5b3" }]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [{ color: "#746855" }]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#1f2835" }]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#f3d19c" }]
+    },
+    {
+      featureType: "transit",
+      elementType: "geometry",
+      stylers: [{ color: "#2f3948" }]
+    },
+    {
+      featureType: "transit.station",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }]
+    },
+    {
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [{ color: "#17263c" }]
+    },
+    {
+      featureType: "water",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#515c6d" }]
+    },
+    {
+      featureType: "water",
+      elementType: "labels.text.stroke",
+      stylers: [{ color: "#17263c" }]
+    }
+  ],
+  retro: [
+    { elementType: "geometry", stylers: [{ color: "#ebe3cd" }] },
+    { elementType: "labels.text.fill", stylers: [{ color: "#523735" }] },
+    { elementType: "labels.text.stroke", stylers: [{ color: "#f5f1e6" }] },
+    {
+      featureType: "administrative",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#c9b2a6" }]
+    },
+    {
+      featureType: "administrative.land_parcel",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#dcd2be" }]
+    },
+    {
+      featureType: "administrative.land_parcel",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#ae9e90" }]
+    },
+    {
+      featureType: "landscape.natural",
+      elementType: "geometry",
+      stylers: [{ color: "#dfd2ae" }]
+    },
+    {
+      featureType: "poi",
+      elementType: "geometry",
+      stylers: [{ color: "#dfd2ae" }]
+    },
+    {
+      featureType: "poi",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#93817c" }]
+    },
+    {
+      featureType: "poi.park",
+      elementType: "geometry.fill",
+      stylers: [{ color: "#a5b076" }]
+    },
+    {
+      featureType: "poi.park",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#447530" }]
+    },
+    {
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [{ color: "#f5f1e6" }]
+    },
+    {
+      featureType: "road.arterial",
+      elementType: "geometry",
+      stylers: [{ color: "#fdfcf8" }]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [{ color: "#f8c967" }]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#e9bc62" }]
+    },
+    {
+      featureType: "road.highway.controlled_access",
+      elementType: "geometry",
+      stylers: [{ color: "#e98d58" }]
+    },
+    {
+      featureType: "road.highway.controlled_access",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#db8555" }]
+    },
+    {
+      featureType: "road.local",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#806b63" }]
+    },
+    {
+      featureType: "transit.line",
+      elementType: "geometry",
+      stylers: [{ color: "#dfd2ae" }]
+    },
+    {
+      featureType: "transit.line",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#8f7d77" }]
+    },
+    {
+      featureType: "transit.line",
+      elementType: "labels.text.stroke",
+      stylers: [{ color: "#ebe3cd" }]
+    },
+    {
+      featureType: "transit.station",
+      elementType: "geometry",
+      stylers: [{ color: "#dfd2ae" }]
+    },
+    {
+      featureType: "water",
+      elementType: "geometry.fill",
+      stylers: [{ color: "#b9d3c2" }]
+    },
+    {
+      featureType: "water",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#92998d" }]
+    }
+  ],
+  hiding: [
+    {
+      featureType: "poi.business",
+      stylers: [{ visibility: "off" }]
+    },
+    {
+      featureType: "transit",
+      elementType: "labels.icon",
+      stylers: [{ visibility: "off" }]
+    }
+  ]
 };
 
 // Replace ZMQ connection with WebSocket
@@ -78,8 +372,62 @@ export async function renderToDOM(container, options = {
   showTransit: true,
   showTraffic: true
 }) {
-  const loader = new Loader({apiKey: GOOGLE_MAPS_API_KEY});
+  const loader = new Loader({ apiKey: GOOGLE_MAPS_API_KEY });
   const googlemaps = await loader.importLibrary('maps');
+
+  const map = new googlemaps.Map(container, {
+    center: AMSTERDAM_CENTER,
+    zoom: 13,
+    heading: 0,
+    tilt: 45,
+    isFractionalZoomEnabled: true,
+    streetViewControl: false,
+    styles: MAP_STYLES.default
+  });
+
+  // Track 3D state
+  map.myIs3D = false;
+
+  // Style selector handler
+  const styleSelector = document.getElementById('style-selector');
+  if (styleSelector) {
+    styleSelector.addEventListener('change', (event) => {
+      if (!map.myIs3D) {
+        const selectedStyle = event.target.value;
+        map.setOptions({
+          styles: MAP_STYLES[selectedStyle]
+        });
+      }
+    });
+  }
+
+  // 3D toggle handler
+  const toggle3dButton = document.getElementById('toggle-3d');
+  if (toggle3dButton) {
+    toggle3dButton.addEventListener('click', () => {
+      if (map.myIs3D) {
+        // Switch to 2D mode
+        const currentStyle = styleSelector.value;
+        map.setOptions({
+          mapId: null,
+          styles: MAP_STYLES[currentStyle],
+          rotateControl: false
+        });
+        styleSelector.disabled = false;
+        map.myIs3D = false;
+      } else {
+        // Switch to 3D mode with vector map
+        map.setOptions({
+          mapId: GOOGLE_MAP_ID,
+          styles: [],
+          tilt: 45,
+          rotateControl: true
+        });
+        styleSelector.disabled = true;
+        map.myIs3D = true;
+      }
+    });
+  }
 
   // Load and verify GeoJSON
   const resp = await fetch(ROADS_URL);
@@ -100,16 +448,6 @@ export async function renderToDOM(container, options = {
   console.log('Prepared animation data:', {
     count: data.length,
     sample: data[0]
-  });
-
-  const map = new googlemaps.Map(container, {
-    center: AMSTERDAM_CENTER,
-    zoom: 13,
-    heading: 0,
-    tilt: 45,
-    isFractionalZoomEnabled: true,
-    mapId: GOOGLE_MAP_ID,
-    streetViewControl: false
   });
 
   let transitLayer = null;
