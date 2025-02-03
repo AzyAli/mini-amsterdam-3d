@@ -45,9 +45,9 @@ const LINE_INFO = {
   27: {type: 'TRAM', direction: 'Dijkgraafplein - Surinameplein'},
 };
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyB3SJS6x2XGb7RuX6C3feKH_zuT34yTfi4';
-const GOOGLE_MAP_ID = '3a2d72d635729222';
-const MY_DARK_3D_MAP_ID = 'c08b06cb02f088ee';
+const GOOGLE_MAPS_API_KEY = '';
+const GOOGLE_MAP_ID = '';
+const MY_DARK_3D_MAP_ID = '';
 const AMSTERDAM_CENTER = {lng: 4.9041, lat: 52.3676};
 
 // const DATA_URL = './data/amsterdam-trips old.json';
@@ -115,7 +115,7 @@ export async function renderToDOM(container, options = {
       });
       console.log('Switched to Satellite mode (classic, 45° imagery).');
     } else if (type === 'dark_3d') {
-      // Force usage of your vector mapId
+      // Force usage of your vector mapId it doesnt seem to work otherwise.
       map.setOptions({
         mapId: MY_DARK_3D_MAP_ID,
         tilt: 45,
