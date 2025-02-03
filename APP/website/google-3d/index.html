@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Mini Amsterdam 3d </title>
+    <title>Mini Amsterdam 3D</title>
     <style>
       /* fill the window */
-      html,
-      body {
+      html, body {
         height: 100%;
         margin: 0;
         padding: 0;
@@ -36,51 +35,22 @@
       }
       #deck-tooltip {
         position: absolute;
-        display: none; /* hide by default */
-        pointer-events: none; /* let clicks pass through */
+        display: none;
+        pointer-events: none;
         background: rgba(0, 0, 0, 0.8);
         color: white;
         padding: 6px;
         border-radius: 4px;
         font-size: 12px;
-        z-index: 999; /* ensure it's on top of the map */
-      }
-      #style-selector-container {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: white;
-        padding: 10px;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-
-      #style-selector {
-        padding: 5px;
-        margin-left: 5px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-      }
-
-      #toggle-3d {
-        margin-right: 10px;
-        padding: 5px 10px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: white;
-        cursor: pointer;
-      }
-
-      #toggle-3d:hover {
-        background: #f0f0f0;
+        z-index: 999;
       }
     </style>
   </head>
   <body>
     <div id="app"></div>
+
     <div class="panel-container">
-      <div class="panel-title">Mini Amsterdam 3d</div>
+      <div class="panel-title">Mini Amsterdam 3D</div>
       <div class="panel-content">
         <div class="input-container">
           <label>Show paths</label>
@@ -99,22 +69,15 @@
           <input type="checkbox" id="camera-tracking" checked>
         </div>
         <p>
-          By <a href="https://github.com/AzyAli" target="_blank">AzyAli</a> inspired by:<a href="https://minitokyo3d.com/" target="_blank">minitokyo3d.com</a>
+          By <a href="https://github.com/AzyAli" target="_blank">AzyAli</a>, inspired by
+          <a href="https://minitokyo3d.com/" target="_blank">minitokyo3d.com</a>
         </p>
       </div>
     </div>
+
+    <!-- Tooltip for Deck.GL hover info -->
     <div id="deck-tooltip"></div>
-    <div id="style-selector-container">
-      <button id="toggle-3d">Toggle 3D View</button>
-      <label for="style-selector">Map Style:</label>
-      <select id="style-selector">
-        <option value="default">Default</option>
-        <option value="silver">Silver</option>
-        <option value="night">Night</option>
-        <option value="retro">Retro</option>
-        <option value="hiding">Hiding</option>
-      </select>
-    </div>
+
     <script type="module">
       import {renderToDOM} from './app.js';
       const app = document.getElementById('app');
@@ -123,15 +86,12 @@
       document.getElementById('show-paths').addEventListener('change', (event) => {
         controls.update({ showPaths: event.target.checked });
       });
-
       document.getElementById('show-transit').addEventListener('change', (event) => {
         controls.update({ showTransit: event.target.checked });
       });
-
       document.getElementById('show-traffic').addEventListener('change', (event) => {
         controls.update({ showTraffic: event.target.checked });
       });
-
       document.getElementById('camera-tracking').addEventListener('change', (event) => {
         controls.update({ tracking: event.target.checked });
       });

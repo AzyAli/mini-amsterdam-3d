@@ -46,7 +46,8 @@ const LINE_INFO = {
 };
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyB3SJS6x2XGb7RuX6C3feKH_zuT34yTfi4';
-const GOOGLE_MAP_ID = 'c08b06cb02f088ee';
+const GOOGLE_MAP_ID = '3a2d72d635729222';
+const MY_DARK_3D_MAP_ID = 'c08b06cb02f088ee';
 const AMSTERDAM_CENTER = {lng: 4.9041, lat: 52.3676};
 
 // const DATA_URL = './data/amsterdam-trips old.json';
@@ -62,299 +63,6 @@ const VEHICLE_COLORS = {
   // DEFAULT: [150, 150, 150]
 };
 
-// Add after existing constants
-const MAP_STYLES = {
-  default: [],
-  silver: [
-    {
-      elementType: "geometry",
-      stylers: [{ color: "#f5f5f5" }]
-    },
-    {
-      elementType: "labels.icon",
-      stylers: [{ visibility: "off" }]
-    },
-    {
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#616161" }]
-    },
-    {
-      elementType: "labels.text.stroke",
-      stylers: [{ color: "#f5f5f5" }]
-    },
-    {
-      featureType: "administrative.land_parcel",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#bdbdbd" }]
-    },
-    {
-      featureType: "poi",
-      elementType: "geometry",
-      stylers: [{ color: "#eeeeee" }]
-    },
-    {
-      featureType: "poi",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#757575" }]
-    },
-    {
-      featureType: "poi.park",
-      elementType: "geometry",
-      stylers: [{ color: "#e5e5e5" }]
-    },
-    {
-      featureType: "poi.park",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#9e9e9e" }]
-    },
-    {
-      featureType: "road",
-      elementType: "geometry",
-      stylers: [{ color: "#ffffff" }]
-    },
-    {
-      featureType: "road.arterial",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#757575" }]
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry",
-      stylers: [{ color: "#dadada" }]
-    },
-    {
-      featureType: "road.highway",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#616161" }]
-    },
-    {
-      featureType: "road.local",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#9e9e9e" }]
-    },
-    {
-      featureType: "transit.line",
-      elementType: "geometry",
-      stylers: [{ color: "#e5e5e5" }]
-    },
-    {
-      featureType: "transit.station",
-      elementType: "geometry",
-      stylers: [{ color: "#eeeeee" }]
-    },
-    {
-      featureType: "water",
-      elementType: "geometry",
-      stylers: [{ color: "#c9c9c9" }]
-    },
-    {
-      featureType: "water",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#9e9e9e" }]
-    }
-  ],
-  night: [
-    { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
-    { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
-    { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
-    {
-      featureType: "administrative.locality",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#d59563" }]
-    },
-    {
-      featureType: "poi",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#d59563" }]
-    },
-    {
-      featureType: "poi.park",
-      elementType: "geometry",
-      stylers: [{ color: "#263c3f" }]
-    },
-    {
-      featureType: "poi.park",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#6b9a76" }]
-    },
-    {
-      featureType: "road",
-      elementType: "geometry",
-      stylers: [{ color: "#38414e" }]
-    },
-    {
-      featureType: "road",
-      elementType: "geometry.stroke",
-      stylers: [{ color: "#212a37" }]
-    },
-    {
-      featureType: "road",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#9ca5b3" }]
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry",
-      stylers: [{ color: "#746855" }]
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry.stroke",
-      stylers: [{ color: "#1f2835" }]
-    },
-    {
-      featureType: "road.highway",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#f3d19c" }]
-    },
-    {
-      featureType: "transit",
-      elementType: "geometry",
-      stylers: [{ color: "#2f3948" }]
-    },
-    {
-      featureType: "transit.station",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#d59563" }]
-    },
-    {
-      featureType: "water",
-      elementType: "geometry",
-      stylers: [{ color: "#17263c" }]
-    },
-    {
-      featureType: "water",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#515c6d" }]
-    },
-    {
-      featureType: "water",
-      elementType: "labels.text.stroke",
-      stylers: [{ color: "#17263c" }]
-    }
-  ],
-  retro: [
-    { elementType: "geometry", stylers: [{ color: "#ebe3cd" }] },
-    { elementType: "labels.text.fill", stylers: [{ color: "#523735" }] },
-    { elementType: "labels.text.stroke", stylers: [{ color: "#f5f1e6" }] },
-    {
-      featureType: "administrative",
-      elementType: "geometry.stroke",
-      stylers: [{ color: "#c9b2a6" }]
-    },
-    {
-      featureType: "administrative.land_parcel",
-      elementType: "geometry.stroke",
-      stylers: [{ color: "#dcd2be" }]
-    },
-    {
-      featureType: "administrative.land_parcel",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#ae9e90" }]
-    },
-    {
-      featureType: "landscape.natural",
-      elementType: "geometry",
-      stylers: [{ color: "#dfd2ae" }]
-    },
-    {
-      featureType: "poi",
-      elementType: "geometry",
-      stylers: [{ color: "#dfd2ae" }]
-    },
-    {
-      featureType: "poi",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#93817c" }]
-    },
-    {
-      featureType: "poi.park",
-      elementType: "geometry.fill",
-      stylers: [{ color: "#a5b076" }]
-    },
-    {
-      featureType: "poi.park",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#447530" }]
-    },
-    {
-      featureType: "road",
-      elementType: "geometry",
-      stylers: [{ color: "#f5f1e6" }]
-    },
-    {
-      featureType: "road.arterial",
-      elementType: "geometry",
-      stylers: [{ color: "#fdfcf8" }]
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry",
-      stylers: [{ color: "#f8c967" }]
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry.stroke",
-      stylers: [{ color: "#e9bc62" }]
-    },
-    {
-      featureType: "road.highway.controlled_access",
-      elementType: "geometry",
-      stylers: [{ color: "#e98d58" }]
-    },
-    {
-      featureType: "road.highway.controlled_access",
-      elementType: "geometry.stroke",
-      stylers: [{ color: "#db8555" }]
-    },
-    {
-      featureType: "road.local",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#806b63" }]
-    },
-    {
-      featureType: "transit.line",
-      elementType: "geometry",
-      stylers: [{ color: "#dfd2ae" }]
-    },
-    {
-      featureType: "transit.line",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#8f7d77" }]
-    },
-    {
-      featureType: "transit.line",
-      elementType: "labels.text.stroke",
-      stylers: [{ color: "#ebe3cd" }]
-    },
-    {
-      featureType: "transit.station",
-      elementType: "geometry",
-      stylers: [{ color: "#dfd2ae" }]
-    },
-    {
-      featureType: "water",
-      elementType: "geometry.fill",
-      stylers: [{ color: "#b9d3c2" }]
-    },
-    {
-      featureType: "water",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#92998d" }]
-    }
-  ],
-  hiding: [
-    {
-      featureType: "poi.business",
-      stylers: [{ visibility: "off" }]
-    },
-    {
-      featureType: "transit",
-      elementType: "labels.icon",
-      stylers: [{ visibility: "off" }]
-    }
-  ]
-};
 
 // Replace ZMQ connection with WebSocket
 async function createGVBSocket() {
@@ -367,77 +75,85 @@ async function createGVBSocket() {
 }
 
 export async function renderToDOM(container, options = {
-  tracking: true,
-  showPaths: true,
-  showTransit: true,
-  showTraffic: true
+  tracking: false,
+  showPaths: false,
+  showTransit: false,
+  showTraffic: false
 }) {
   const loader = new Loader({ apiKey: GOOGLE_MAPS_API_KEY });
   const googlemaps = await loader.importLibrary('maps');
 
+
+  const darkMapType = new googlemaps.StyledMapType([], {
+    name: "Dark"
+  });
+
   const map = new googlemaps.Map(container, {
     center: AMSTERDAM_CENTER,
     zoom: 13,
-    heading: 0,
     tilt: 45,
-    isFractionalZoomEnabled: true,
+    heading: 0,
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      style: googlemaps.MapTypeControlStyle.DEFAULT,
+      mapTypeIds: ['roadmap','terrain','satellite','hybrid','dark_3d','terrain']
+    },
     streetViewControl: false,
-    styles: MAP_STYLES.default
+    mapId: MY_DARK_3D_MAP_ID
   });
 
-  // Track 3D state
-  map.myIs3D = false;
+  map.mapTypes.set('dark_3d', darkMapType);
+  map.addListener('maptypeid_changed', () => {
+    const type = map.getMapTypeId();
+    console.log('maptypeid changed:', type);
+    if (type === 'satellite') {
+      // Old-school Satellite with 45° if available
+      map.setOptions({
+        mapId: null,
+        tilt: 45,
+        heading: 0
+      });
+      console.log('Switched to Satellite mode (classic, 45° imagery).');
+    } else if (type === 'dark_3d') {
+      // Force usage of your vector mapId
+      map.setOptions({
+        mapId: MY_DARK_3D_MAP_ID,
+        tilt: 45,
+        heading: 0
+      });
+      console.log('Switched to Dark 3D vector environment.');
+    } else {
+      // Roadmap or anything else => normal 3d
+      map.setOptions({
+        mapId: GOOGLE_MAP_ID,
+        tilt: 45,
+        heading: 0
+      });
+      console.log('Switched to normal Roadmap (3D).');
+    }
+  });
 
-  // Style selector handler
-  const styleSelector = document.getElementById('style-selector');
-  if (styleSelector) {
-    styleSelector.addEventListener('change', (event) => {
-      if (!map.myIs3D) {
-        const selectedStyle = event.target.value;
-        map.setOptions({
-          styles: MAP_STYLES[selectedStyle]
-        });
-      }
-    });
-  }
+  
 
-  // 3D toggle handler
-  const toggle3dButton = document.getElementById('toggle-3d');
-  if (toggle3dButton) {
-    toggle3dButton.addEventListener('click', () => {
-      if (map.myIs3D) {
-        // Switch to 2D mode
-        const currentStyle = styleSelector.value;
-        map.setOptions({
-          mapId: null,
-          styles: MAP_STYLES[currentStyle],
-          rotateControl: false
-        });
-        styleSelector.disabled = false;
-        map.myIs3D = false;
-      } else {
-        // Switch to 3D mode with vector map
-        map.setOptions({
-          mapId: GOOGLE_MAP_ID,
-          styles: [],
-          tilt: 45,
-          rotateControl: true
-        });
-        styleSelector.disabled = true;
-        map.myIs3D = true;
-      }
-    });
-  }
 
   // Load and verify GeoJSON
   const resp = await fetch(ROADS_URL);
   const geoJson = await resp.json();
   
   // Convert GeoJSON to animation format with validation
-  const data = geoJson.features
+  let data = geoJson.features
     .filter(f => 
       f.properties.highway === 'motorway' ||
-      f.properties.highway === 'motorway_link'
+      f.properties.highway === 'motorway_link'||
+      f.properties.highway === 'primary' ||
+      f.properties.highway === 'secondary' ||
+      // f.properties.highway === 'tertiary' ||
+      f.properties.highway === 'trunk' ||
+      // f.properties.highway === 'unclassified' 
+      f.properties.highway === 'busway' 
+      // f.properties.highway === 'residential' 
+      // f.properties.highway === 'cycleway'
+
     )
     .map(f => f.geometry.coordinates[0])
     .filter(coords => 
@@ -445,8 +161,21 @@ export async function renderToDOM(container, options = {
       coords.length >= 2
     );
 
+    function isLoop(coords, thresholdMeters = 15) {
+    const first = coords[0];
+    const last = coords[coords.length - 1];
+    const dist = approximateLatLngDistMeters(first, last);
+    return dist < thresholdMeters;
+  }
+  data = data.filter(coords => !isLoop(coords));
+  
+  data.sort((a, b) => approximateLineLength(b) - approximateLineLength(a));  
+  const slicedData = data.slice(1, 4);
+  console.log('Using the top 3 longest motorway segments:', slicedData.length);
+
   console.log('Prepared animation data:', {
     count: data.length,
+    using: slicedData.length,
     sample: data[0]
   });
 
@@ -501,7 +230,37 @@ export async function renderToDOM(container, options = {
     }
   };
 
-  const stopAnimation = startAnimation(map, overlay, data, options, vehiclePositions, socket);
+  const stopAnimation = startAnimation(map, overlay, slicedData, options, vehiclePositions, socket);
+  function approximateLatLngDistMeters(coordA, coordB) {
+    const [lng1, lat1] = coordA;
+    const [lng2, lat2] = coordB;
+  
+    // Quick Haversine approximation
+    const R = 6371008.8; 
+    const dLat = toRad(lat2 - lat1);
+    const dLng = toRad(lng2 - lng1);
+    const radLat1 = toRad(lat1);
+    const radLat2 = toRad(lat2);
+  
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(radLat1) * Math.cos(radLat2) * Math.sin(dLng / 2) ** 2;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+
+  function approximateLineLength(coords) {
+    let total = 0;
+    for (let i = 1; i < coords.length; i++) {
+      total += approximateLatLngDistMeters(coords[i - 1], coords[i]);
+    }
+    return total;
+  }
+
+  function toRad(angleDeg) {
+    return (Math.PI * angleDeg) / 180;
+  }
+
 
   return {
     update: newOpts => {
@@ -527,6 +286,7 @@ export async function renderToDOM(container, options = {
       stopAnimation();
       overlay.finalize();
     }
+  
   };
 }
 
