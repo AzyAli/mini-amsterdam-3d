@@ -1,4 +1,4 @@
-# Mini Amsterdam 3D Digital Twin
+# Mini Amsterdam 3D Digital Twin      [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14811506.svg)](https://doi.org/10.5281/zenodo.14811506)
 
 ## Introduction
 Welcome to the Mini Amsterdam 3D Digital Twin project! This is my individual coursework project for the 3D Modeling for City Digital Twins course at ITC, University of Twente. Inspired by [Mini Tokyo 3D](https://minitokyo3d.com/), I created a real-time 3D visualization system that shows live transit data in Amsterdam, alongside simulated company vehicles.
@@ -83,3 +83,6 @@ Tooltip information for transit vehicles
 - Course instructors at ITC for guidance and advice.
 
 - To build your own application with deck.gl and Google Maps, check out the [documentation of @deck.gl/google-maps module](../../../docs/api-reference/google-maps/overview.md)
+
+
+
